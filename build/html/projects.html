@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header_footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" href="/images/main_logo.svg">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=fef7e3c9-583a-4e95-a050-8cee33b80427&lang=ru_RU" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+       ymaps.ready(function () {
+   var myMap = new ymaps.Map('map', {
+           center: [55.64239903922247, 37.92069505372031],
+           zoom: 15
+       }, {
+           searchControlProvider: 'yandex#search'
+       }),
+
+       // Создаём макет содержимого.
+       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+           '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+       ),
+
+       myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+           hintContent: 'Собственный значок метки',
+           balloonContent: 'Это красивая метка'
+       }, {
+           // Опции.
+           // Необходимо указать данный тип макета.
+           iconLayout: 'default#image',
+           // Своё изображение иконки метки.
+           iconImageHref: '../images/map_mark.png',
+           // Размеры метки.
+           iconImageSize: [82, 93],
+           // Смещение левого верхнего угла иконки относительно
+           // её "ножки" (точки привязки).
+           iconImageOffset: [-5, -38]
+       }),
+
+       myPlacemarkWithContent = new ymaps.Placemark([55.64239903922247, 37.92069505372031], {
+           hintContent: 'Собственный значок метки с контентом',
+           balloonContent: 'А эта — новогодняя',
+           iconContent: '12'
+       }, {
+           // Опции.
+           // Необходимо указать данный тип макета.
+           iconLayout: 'default#imageWithContent',
+           // Своё изображение иконки метки.
+           iconImageHref: 'images/ball.png',
+           // Размеры метки.
+           iconImageSize: [48, 48],
+           // Смещение левого верхнего угла иконки относительно
+           // её "ножки" (точки привязки).
+           iconImageOffset: [-24, -24],
+           // Смещение слоя с содержимым относительно слоя с картинкой.
+           iconContentOffset: [15, 15],
+           // Макет содержимого.
+           iconContentLayout: MyIconContentLayout
+       });
+
+   myMap.geoObjects
+       .add(myPlacemark)
+       .add(myPlacemarkWithContent);
+});
+   </script>
+        <title>Главная</title>
+</head>
+<body>
+   <div class="trilogy_main_wrapper">
+    <header class="header_second">
+        <div class="header_wrapper">
+            <div class="header_main_logo_wrapper">
+                <a href="">
+                    <img src="../images/main_logo.svg" alt="">
+                </a>
+            </div>
+            <nav class="header_main_nav_wrapper">
+                <ul class="header_main_ul_wrapper">
+                     <li class="header_main_li">
+                         <a href="" class="header_main_link">Главная</a>
+                     </li>
+                     <li class="header_main_li">
+                         <a href="" class="header_main_link">Проект</a>
+                     </li>
+                     <li class="header_main_li">
+                         <a href="" class="header_main_link">Партнеры</a>
+                     </li>
+                     <li class="header_main_li">
+                         <a href="" class="header_main_link">Контакты</a>
+                     </li>
+                </ul>
+            </nav>
+            <div class="header_phone_contacts_wrapper">
+                <div class="phone_svg_wrapper">
+                    <img src="../images/call_pic.png" alt="">
+                </div>
+                <div class="header_phone_contacts_info_wrapper">
+                    <p class="header_phone_contacts_info1">+7 (495) 931-99-93</p>
+                    <p class="header_work_hours_info2">C 10:00 до 19:00</p>
+                </div>
+            </div>
+            <div class="hamburger-menu">
+             <span class="hamburger-menu-line"></span>
+             <span class="hamburger-menu-line"></span>
+             <span class="hamburger-menu-line last-line"></span>
+         </div>
+         <div class="mobile_version">
+             <i class="material-icons mobile-close mobile-version_close">close</i>
+             <nav class="mobile_header_main_nav_wrapper">
+                 <ul class="header_main_ul_wrapper">
+                      <li class="header_main_li">
+                          <a href="" class="header_main_link">Главная</a>
+                      </li>
+                      <li class="header_main_li">
+                          <a href="" class="header_main_link">Проект</a>
+                      </li>
+                      <li class="header_main_li">
+                          <a href="" class="header_main_link">Партнеры</a>
+                      </li>
+                      <li class="header_main_li">
+                          <a href="" class="header_main_link">Контакты</a>
+                      </li>
+                 </ul>
+             </nav>
+             <div class="mobile_header_phone_contacts_wrapper">
+                 <div class="phone_svg_wrapper">
+                     <img src="../images/call_pic.png" alt="">
+                 </div>
+                 <div class="header_phone_contacts_info_wrapper">
+                     <p class="header_phone_contacts_info1">+7 (495) 931-99-93</p>
+                     <p class="header_work_hours_info2">C 10:00 до 19:00</p>
+                 </div>
+             </div>
+         </div>
+        </div>
+    </header>
+       <main>
+          <section class="projects_links">
+              <div class="projects_img1">
+                  <img src="../images/proeject_item1.png" alt="">
+              </div>
+              <div class="projects_img2">
+                  <img src="../images/projects_text_img.png" alt="">
+              </div>
+              <div class="projects_img3">
+                  <img src="../images/projects_item4.png" alt="">
+              </div>
+              <div class="projects_img4">
+                <img src="../images/projects_item_text_img1.png" alt="">
+            </div>
+              <div class="projects_links_wrapper">
+                  <h1 class="projects_title">
+                    Наши проекты
+                  </h1>
+                   <div class="projects_links_items_wrapper open">
+
+                       <div  class="projects_links_item first_project_item">
+                           <!-- <div class="projects_link_img">
+                               <img src="../images/project_link_img1.png" alt="">
+                           </div> -->
+                            <div class="projects_links_item_text_wrapper">
+                                <div class="projects_links_item_text">
+                                    <p class="projects_link_item_title">Парк <br>
+                                       <span>Томилино</span> 
+                                    </p>
+                                    <a href="" class="project_item_link">Узнать больше
+                                        <img src="../images/chevron.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="projects_links_item_text second_text">
+                                    <div class="projects_links_item_img">
+                                        <img src="../images/place.png" alt="">
+                                    </div>
+                                    <p class="project_item_info">
+                                        мкр. Птицефабрика, 35-39, Томилино, Московская обл., 140073
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                       <div  class="projects_links_item second_project_item">
+                           <!-- <div class="projects_link_img">
+                               <img src="../images/projects_link_img10.png" alt="">
+                           </div> -->
+                           <div class="projects_links_item_text_wrapper">
+                            <div class="projects_links_item_text">
+                                <p class="projects_link_item_title">Парк <br>
+                                   <span>Нова парк</span> 
+                                </p>
+                                <a href="" class="project_item_link">Узнать больше
+                                    <img src="../images/chevron.png" alt="">
+                                </a>
+                            </div>
+                            <div class="projects_links_item_text second_text">
+                                <div class="projects_links_item_img">
+                                    <img src="../images/place.png" alt="">
+                                </div>
+                                <p class="project_item_info">
+                                    Тепличная улица, г.Нижний Новгород
+                                </p>
+                               
+                            </div>
+                        </div>
+                      </div>
+                    
+                  </div>
+                  <div class="projects_links_items_wrapper">
+
+                    <div  class="projects_links_item">
+                        <!-- <div class="projects_link_img">
+                            <img src="../images/project_link_img1.png" alt="">
+                        </div> -->
+                         <div class="projects_links_item_text_wrapper">
+                             <div class="projects_links_item_text">
+                                 <p class="projects_link_item_title">Парк <br>
+                                    <span>Томилино</span> 
+                                 </p>
+                                 <a href="" class="project_item_link">Узнать больше
+                                     <img src="../images/chevron.png" alt="">
+                                 </a>
+                             </div>
+                             <div class="projects_links_item_text second_text">
+                                 <div class="projects_links_item_img">
+                                     <img src="../images/place.png" alt="">
+                                 </div>
+                                 <p class="project_item_info">
+                                     мкр. Птицефабрика, 35-39, Томилино, Московская обл., 140073
+                                 </p>
+                             </div>
+                         </div>
+                     </div>
+                    <div  class="projects_links_item">
+                        <!-- <div class="projects_link_img">
+                            <img src="../images/projects_link_img10.png" alt="">
+                        </div> -->
+                        <div class="projects_links_item_text_wrapper">
+                         <div class="projects_links_item_text">
+                             <p class="projects_link_item_title">Парк <br>
+                                <span>Нова парк</span> 
+                             </p>
+                             <a href="" class="project_item_link">Узнать больше
+                                 <img src="../images/chevron.png" alt="">
+                             </a>
+                         </div>
+                         <div class="projects_links_item_text second_text">
+                             <div class="projects_links_item_img">
+                                 <img src="../images/place.png" alt="">
+                             </div>
+                             <p class="project_item_info">
+                                 Тепличная улица, г.Нижний Новгород
+                             </p>
+                            
+                         </div>
+                     </div>
+                   </div>
+                 
+               </div>
+              <button class="show_more_links">показать еще
+                  <img src="../images/btn_svg.png" alt="">
+              </button>
+              <p class="special_text">People Planet Profit</p>
+          </section>
+           <section class="contacts">
+                <div class="contacts_wrapper">
+                    <div id="map" style=" width: 100%;  height: 757px"></div>
+                    <form action="" class="contacts_form">
+                        <div class="contacts_form_wrapper">
+                            <div class="contacts_phone_svg_phone_wrapper">
+                                <div class="contacts_phone_svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><g><g><image width="17" height="17" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAABIUlEQVQ4T5XSvytFYRzH8dcVf4BkIBMTBqMsQoxiUSbTNZiU0W5goCSLjGI0GSwsNgMLBqVMoq7uLD/65pw6nc6999xnOT1Pn8/7+3k+z6lgG6vo8L++sYutZN/yU0EN3TnlG/pauhNBQN7RmzNEmi78lgEF5A5jBeJRPJSFnGK5QFzFcVnIGg4LxDO4KgsZwCviaunaw0YZQGhS4yXmEtMzRvDVLmQqE/0H47htFxL6cywkxkdMoF4GlO0huonn7kmM11jMgaYxiBs8pQOykDibxUXyo8U+hCu4xw7WM8misw/s5yGhWcJJBhQdvWCowdVqRZA00Vnmas2qqTeChCk6OsiU3QjUFJKa4vk3k76Khn42S5KfHMnmMYlh9KMTR3/rPy/N6k9mLAAAAABJRU5ErkJggg=="/></g></g></svg>
+                                </div>
+                                <p class="contacts_phone_number">+7 (495) 931-99-93</p>
+                            </div>
+                            <p class="contacts_work_hours">Звоните с 10:00 до 19:00</p>
+                            <p class="contacts_info1">
+                                Или заполните форму и мы свяжемся с вами в течении <span>15 минут.</span> 
+                            </p>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" placeholder="Введите фио" class="contacts_input" name="name_surname"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input"  placeholder="Фирма" name="firm"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input" placeholder="Размер площади" name="square_size"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input" name="email" placeholder="@mail" id="email"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input" name="phone_number"  id="phone" placeholder="+7 (___) ___ - __ - __"> 
+                            </div>
+                            <button class="form_submit_btn">Оставить заявку</button>
+                            <p class="contacts_info2">
+                                Нажимая кнопку “Оставить заявку”, вы даете <span>согласие на обработку персональных данных</span>. 
+                            </p>
+                        </div>
+                    </form>
+                </div>
+           </section>
+       </main>
+   </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="../js/jquery.inputmask.min.js">
+
+  </script>
+    <script src="../js/script.js">
+    </script>
+</body>
+</html>
+
+
+
+
+
+    
+
+
+

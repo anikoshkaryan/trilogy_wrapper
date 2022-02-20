@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header_footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" href="/images/main_logo.svg">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=fef7e3c9-583a-4e95-a050-8cee33b80427&lang=ru_RU" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+       ymaps.ready(function () {
+   var myMap = new ymaps.Map('map', {
+           center: [55.64239903922247, 37.92069505372031],
+           zoom: 15
+       }, {
+           searchControlProvider: 'yandex#search'
+       }),
+
+       // Создаём макет содержимого.
+       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+           '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+       ),
+
+       myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+           hintContent: 'Собственный значок метки',
+           balloonContent: 'Это красивая метка'
+       }, {
+           // Опции.
+           // Необходимо указать данный тип макета.
+           iconLayout: 'default#image',
+           // Своё изображение иконки метки.
+           iconImageHref: '../images/map_mark.png',
+           // Размеры метки.
+           iconImageSize: [82, 93],
+           // Смещение левого верхнего угла иконки относительно
+           // её "ножки" (точки привязки).
+           iconImageOffset: [-5, -38]
+       }),
+
+       myPlacemarkWithContent = new ymaps.Placemark([55.64239903922247, 37.92069505372031], {
+           hintContent: 'Собственный значок метки с контентом',
+           balloonContent: 'А эта — новогодняя',
+           iconContent: '12'
+       }, {
+           // Опции.
+           // Необходимо указать данный тип макета.
+           iconLayout: 'default#imageWithContent',
+           // Своё изображение иконки метки.
+           iconImageHref: 'images/ball.png',
+           // Размеры метки.
+           iconImageSize: [48, 48],
+           // Смещение левого верхнего угла иконки относительно
+           // её "ножки" (точки привязки).
+           iconImageOffset: [-24, -24],
+           // Смещение слоя с содержимым относительно слоя с картинкой.
+           iconContentOffset: [15, 15],
+           // Макет содержимого.
+           iconContentLayout: MyIconContentLayout
+       });
+
+   myMap.geoObjects
+       .add(myPlacemark)
+       .add(myPlacemarkWithContent);
+});
+   </script>
+        <title>Главная</title>
+</head>
+<body>
+   <div class="trilogy_main_wrapper">
+    <header class="header_second">
+        <div class="header_wrapper">
+            <div class="header_main_logo_wrapper">
+                <a href="">
+                    <img src="../images/main_logo.svg" alt="">
+                </a>
+            </div>
+            <nav class="header_main_nav_wrapper">
+                <ul class="header_main_ul_wrapper">
+                     <li class="header_main_li">
+                         <a href="" class="header_main_link">Главная</a>
+                     </li>
+                     <li class="header_main_li">
+                         <a href="" class="header_main_link">Проект</a>
+                     </li>
+                     <li class="header_main_li">
+                         <a href="" class="header_main_link">Партнеры</a>
+                     </li>
+                     <li class="header_main_li">
+                         <a href="" class="header_main_link">Контакты</a>
+                     </li>
+                </ul>
+            </nav>
+            <div class="header_phone_contacts_wrapper">
+                <div class="phone_svg_wrapper">
+                    <img src="../images/call_pic.png" alt="">
+                </div>
+                <div class="header_phone_contacts_info_wrapper">
+                    <p class="header_phone_contacts_info1">+7 (495) 931-99-93</p>
+                    <p class="header_work_hours_info2">C 10:00 до 19:00</p>
+                </div>
+            </div>
+            <div class="hamburger-menu">
+             <span class="hamburger-menu-line"></span>
+             <span class="hamburger-menu-line"></span>
+             <span class="hamburger-menu-line last-line"></span>
+         </div>
+         <div class="mobile_version">
+             <i class="material-icons mobile-close mobile-version_close">close</i>
+             <nav class="mobile_header_main_nav_wrapper">
+                 <ul class="header_main_ul_wrapper">
+                      <li class="header_main_li">
+                          <a href="" class="header_main_link">Главная</a>
+                      </li>
+                      <li class="header_main_li">
+                          <a href="" class="header_main_link">Проект</a>
+                      </li>
+                      <li class="header_main_li">
+                          <a href="" class="header_main_link">Партнеры</a>
+                      </li>
+                      <li class="header_main_li">
+                          <a href="" class="header_main_link">Контакты</a>
+                      </li>
+                 </ul>
+             </nav>
+             <div class="mobile_header_phone_contacts_wrapper">
+                 <div class="phone_svg_wrapper">
+                     <img src="../images/call_pic.png" alt="">
+                 </div>
+                 <div class="header_phone_contacts_info_wrapper">
+                     <p class="header_phone_contacts_info1">+7 (495) 931-99-93</p>
+                     <p class="header_work_hours_info2">C 10:00 до 19:00</p>
+                 </div>
+             </div>
+         </div>
+        </div>
+    </header>
+       <main>
+     
+           <section class="contacts_second">
+            <div class="contacts_wrapper">
+                 
+                <div class="contacts_form_info_wrapper">
+                    <div class="contacts_info_wrapper">
+                        <h1 class="contacts_info_title">Контакты</h1>
+                        <div class="contacts_info_svg_title_wrapper">
+                            <div class="contacts_svg_title_wrapper">
+                                <div class="contacts_svg">
+                                    <img src="../images/call.png" alt="">
+                                </div>
+                                <p class="contacts_title">Телефон:</p>
+                            </div>
+                            <p class="contacts_info_text">+ 7 (495) 931-99-93</p>
+                        </div>
+                        <div class="contacts_info_svg_title_wrapper">
+                            <div class="contacts_svg_title_wrapper">
+                                <div class="contacts_svg">
+                                    <img src="../images/place_second.png" alt="">
+                                </div>
+                                <p class="contacts_title">Адрес офиса:</p>
+                            </div>
+                            <p class="contacts_info_text">Москва, Коровий вал 7с1</p>
+                        </div>
+                        <div class="contacts_info_svg_title_wrapper">
+                            <div class="contacts_svg_title_wrapper">
+                                <div class="contacts_svg">
+                                    <img src="../images/emai_secondl.png" alt="">
+                                </div>
+                                <p class="contacts_title">@mail:</p>
+                            </div>
+                            <p class="contacts_info_text">info@t-develop.com</p>
+                        </div>
+                        <div class="contacts_info_svg_title_wrapper">
+                            <div class="contacts_svg_title_wrapper">
+                                <div class="contacts_svg">
+                                    <img src="../images/clock.png" alt="">
+                                </div>
+                                <p class="contacts_title">Режим работы:</p>
+                            </div>
+                            <p class="contacts_info_text">с 10:00 до 19:00</p>
+                        </div>
+                    </div>
+                    <form action="" class="contacts_form_second">     
+                        <div class="contacts_inputs_btn_wrapper">
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" placeholder="Введите фио" class="contacts_input" name="name_surname"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input"  placeholder="Фирма" name="firm"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input" placeholder="Размер площади" name="square_size"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input" name="email" placeholder="@mail" id="email"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input" name="phone_number"  id="phone" placeholder="+7 (___) ___ - __ - __"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                 <button class="form_submit_btn">Оставить заявку</button>
+                            </div>
+                           
+                        </div>                 
+                            
+                            <p class="contacts_info2">
+                                Нажимая кнопку “Оставить заявку”, вы даете <span>согласие на обработку персональных данных</span>. 
+                            </p>
+                        
+                    </form>
+                </div>
+            
+            </div>
+                  <div id="map" style=" width: 100%;  height: 885px"></div>
+               
+           </section>
+       </main>
+   </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="../js/jquery.inputmask.min.js">
+
+  </script>
+    <script src="../js/script.js">
+    </script>
+</body>
+</html>
+
+
+
+
+
+    
+
+
+

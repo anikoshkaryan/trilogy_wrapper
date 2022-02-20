@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header_footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" href="/images/main_logo.svg">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=fef7e3c9-583a-4e95-a050-8cee33b80427&lang=ru_RU" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+       ymaps.ready(function () {
+   var myMap = new ymaps.Map('map', {
+           center: [55.64239903922247, 37.92069505372031],
+           zoom: 15
+       }, {
+           searchControlProvider: 'yandex#search'
+       }),
+
+       // Создаём макет содержимого.
+       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+           '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+       ),
+
+       myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+           hintContent: 'Собственный значок метки',
+           balloonContent: 'Это красивая метка'
+       }, {
+           // Опции.
+           // Необходимо указать данный тип макета.
+           iconLayout: 'default#image',
+           // Своё изображение иконки метки.
+           iconImageHref: '../images/map_mark.png',
+           // Размеры метки.
+           iconImageSize: [82, 93],
+           // Смещение левого верхнего угла иконки относительно
+           // её "ножки" (точки привязки).
+           iconImageOffset: [-5, -38]
+       }),
+
+       myPlacemarkWithContent = new ymaps.Placemark([55.64239903922247, 37.92069505372031], {
+           hintContent: 'Собственный значок метки с контентом',
+           balloonContent: 'А эта — новогодняя',
+           iconContent: '12'
+       }, {
+           // Опции.
+           // Необходимо указать данный тип макета.
+           iconLayout: 'default#imageWithContent',
+           // Своё изображение иконки метки.
+           iconImageHref: 'images/ball.png',
+           // Размеры метки.
+           iconImageSize: [48, 48],
+           // Смещение левого верхнего угла иконки относительно
+           // её "ножки" (точки привязки).
+           iconImageOffset: [-24, -24],
+           // Смещение слоя с содержимым относительно слоя с картинкой.
+           iconContentOffset: [15, 15],
+           // Макет содержимого.
+           iconContentLayout: MyIconContentLayout
+       });
+
+   myMap.geoObjects
+       .add(myPlacemark)
+       .add(myPlacemarkWithContent);
+});
+   </script>
+        <title>Главная</title>
+</head>
+<body>
+   <div class="trilogy_main_wrapper">
+       <header class="header">
+           <div class="header_wrapper">
+               <div class="header_main_logo_wrapper">
+                   <a href="">
+                       <img src="../images/main_logo.svg" alt="">
+                   </a>
+               </div>
+               <nav class="header_main_nav_wrapper">
+                   <ul class="header_main_ul_wrapper">
+                        <li class="header_main_li">
+                            <a href="" class="header_main_link">Главная</a>
+                        </li>
+                        <li class="header_main_li">
+                            <a href="" class="header_main_link">Проект</a>
+                        </li>
+                        <li class="header_main_li">
+                            <a href="" class="header_main_link">Партнеры</a>
+                        </li>
+                        <li class="header_main_li">
+                            <a href="" class="header_main_link">Контакты</a>
+                        </li>
+                   </ul>
+               </nav>
+               <div class="header_phone_contacts_wrapper">
+                   <div class="phone_svg_wrapper">
+                       <img src="../images/call_pic.png" alt="">
+                   </div>
+                   <div class="header_phone_contacts_info_wrapper">
+                       <p class="header_phone_contacts_info1">+7 (495) 931-99-93</p>
+                       <p class="header_work_hours_info2">C 10:00 до 19:00</p>
+                   </div>
+               </div>
+               <div class="hamburger-menu">
+                <span class="hamburger-menu-line"></span>
+                <span class="hamburger-menu-line"></span>
+                <span class="hamburger-menu-line last-line"></span>
+            </div>
+            <div class="mobile_version">
+                <i class="material-icons mobile-close mobile-version_close">close</i>
+                <nav class="mobile_header_main_nav_wrapper">
+                    <ul class="header_main_ul_wrapper">
+                         <li class="header_main_li">
+                             <a href="" class="header_main_link">Главная</a>
+                         </li>
+                         <li class="header_main_li">
+                             <a href="" class="header_main_link">Проект</a>
+                         </li>
+                         <li class="header_main_li">
+                             <a href="" class="header_main_link">Партнеры</a>
+                         </li>
+                         <li class="header_main_li">
+                             <a href="" class="header_main_link">Контакты</a>
+                         </li>
+                    </ul>
+                </nav>
+                <div class="mobile_header_phone_contacts_wrapper">
+                    <div class="phone_svg_wrapper">
+                        <img src="../images/call_pic.png" alt="">
+                    </div>
+                    <div class="header_phone_contacts_info_wrapper">
+                        <p class="header_phone_contacts_info1">+7 (495) 931-99-93</p>
+                        <p class="header_work_hours_info2">C 10:00 до 19:00</p>
+                    </div>
+                </div>
+            </div>
+           </div>
+           <img src="" alt="">
+       </header>
+       <main>
+           <section class="top">
+               <div class="top_wrapper">
+                   <div class="top_info_wrapper">
+                       <h1 class="top_title">Создание на территории России сети логистических парков <span>класса А</span></h1>
+                       <p class="top_info">
+                        Создание на территории России сети логистических парков <span>класса А</span> 
+                       </p>
+                       <a href="" class="top_link">
+                        Подробнее
+                       </a>
+                   </div>
+               </div>
+           </section>
+           <section class="features">
+               <div class="features_wrapper">
+                   <div class="features_items_wrapper">
+                       <div class="features_item">
+                           <div class="features_item_img_wrapper">
+                            <img src="../images/logistics.png" alt="">
+                           </div>
+                           <p class="features_item_info">
+                            Эффективная
+                            транспортная логистика
+                           </p>
+                       </div>
+                       <div class="features_item">
+                           <div class="features_item_img_wrapper">
+                               <img src="../images/meeting-point.png" alt="">
+                           </div>
+                           <p class="features_item_info">
+                            Уникальное
+                            местоположение
+                           </p>
+                       </div>
+                       <div class="features_item">
+                           <div class="features_item_img_wrapper">
+                               <img src="../images/logistics_(1).png" alt="">
+                           </div>
+                           <p class="features_item_info">
+                            Оптимальная организация транспорта внутри Парка
+                           </p>
+                       </div>
+                   </div>
+               </div>
+           </section>
+           <section class="about_us">
+            
+              
+               <div class="about_us_wrapper">
+                 <div class="about_us_items_wrapper">
+                     <div class="about_us_item_first">
+                         <h1 class="about_us_title">О нас</h1>
+                         <p class="about_us_item_info">
+                           <span>Трилоджи - </span>динамично развивающаяся структура, осуществляющая полный цикл мероприятий в сфере девелопмента и строительства: выбор и приобретение земельного участка, анализ эффективности, разработку концепции и проекта, обеспечение финансирования, строительство и ввод в эксплуатацию.
+                           Основным направлением деятельности компании является реализация масштабных складских и индустриальных проектов на территории Московской области и в крупных региональных центрах России. Трилоджи занимает ведущую позицию в области прогрессивных логистических решений, строительных материалов, энергосбережения, безопасности и связи. Проекты компании отвечают высоким экологическим требованиям.
+                           
+                           Трилоджи взаимодействует с ведущими иностранными специалистами в области развития современных складских технологий и логистических решений, сотрудничает как с российскими, так
+                           и с зарубежными инвесторами.
+                           
+                           временных технологий и логистических решений. 
+                            
+                         </p>
+                     </div>
+                     <div class="about_us_item_second">
+                        <img src="../images/about_img20.png" alt="">
+                     </div>
+                     <div class="about_us_item_third">
+                        <img src="../images/about_us_img11.png" alt="">
+                     </div>
+                     <div class="about_us_item_four">
+                         <div class="about_us_four_main_img">
+                             <img src="../images/about_us_img12.png" alt="">
+                         </div>
+                         <div class="about_us_four_item_info">
+                            <p class="about_us_item_four_info1">
+                                Придерживаясь высоких требований, предъявляемых к строительству логистических парков класса А, насытить рынок ультрасовременными складами с соответствующими характеристиками и обеспечить клиентам необходимые условия для комфортного развития стабильного бизнеса.
+                            </p>
+                            <div class="about_item_four_img">
+                                <img src="../images/about_four_item.png" alt="">
+                            </div>
+                            <p class="about_us_item_four_info2">
+                                Стремление к масштабному внедрению и комплексному развитию экологического («зелёного строительства») в России.. 
+                            </p>
+                         </div>
+                
+                     </div>
+                 </div>
+                 <p class="special_text">
+                    People Planet Profit
+                 </p>
+               </div>
+           </section>
+           <section class="our_services">
+               <div class="our_services_wrapper">
+                   <h1 class="our_services_title">Наши услуги</h1>
+                   <div class="our_services_items_wrapper">
+                       <div class="our_services_item">
+                           <div class="our_services_item_img_wrapper first_img">
+                               <div class="our_services_item_img ">
+                                   <img src="../images/service_item_img1.png" alt="">
+                               </div>
+                           </div>
+                           <div class="our_services_item_info_wrapper">
+                               <p class="our_services_item_info_wrapper_title">Анализ эффективности</p>
+                               <p class="our_services_item_info_wrapper_info">
+                                Эффективность проектов обусловлена прогрессивными решениями, отвечающими актуальным требованиям рынка.
+                                В штате компании более 30-ти специалистов с большим опытом работы в области строительства, как на территории России, так и за рубежом.
+                                Трилоджи взаимодействует с ведущими российскими и иностранными специалистами в области развития современных складских технологий
+                                и логистических решений.
+                               </p>
+                           </div>
+                       </div>
+                       <div class="our_services_item special_item">
+                        <div class="our_services_item_img_wrapper second_img">
+                        <div class="our_services_item_img ">
+                            <img src="../images/service_item_img2.png" alt="">
+                        </div>
+                        </div>
+                           <div class="our_services_item_info_wrapper">
+                               <p class="our_services_item_info_wrapper_title">
+                                Обеспечение финансирования
+                               </p>
+                                  <p class="our_services_item_info_wrapper_info">
+                                    Трилоджи сотрудничает как с российскими, так и с зарубежными инвесторами.
+                                    Успешные проекты с международным девелопером Eurasian Real Estate, компанией Archicom и компанией Turner & Townsend, специализирующимися на проектировании и инжиниринге в сфере коммерческой недвижимости, положительно зарекомендовали Трилоджи как надежного партнера для реализации будущих крупномасштабных проектов в Европе и России.
+                               </p>
+                           </div>
+                       </div>
+                       <div class="our_services_item">
+                        <div class="our_services_item_img_wrapper third_img">
+                            <div class="our_services_item_img ">
+                                <img src="../images/service_item_img4.png" alt="">
+                            </div>
+                            </div>
+                           <div class="our_services_item_info_wrapper">
+                               <p class="our_services_item_info_wrapper_title">
+                                Разработка концепции
+                                и проекта
+                               </p>
+                                  <p class="our_services_item_info_wrapper_info">
+                                    Проекты Трилоджи синхронизируют требования заказчика с новейшими тенденциями в области строительных материалов, энергосбережения, безопасности, связи и отвечают высоким экологическим требованиям.
+                                     Трилоджи занимает лидирующие позиции в области современных технологий и логистических решений.
+                               </p>
+                           </div>
+                       </div>
+                       <div class="our_services_item">
+                        <div class="our_services_item_img_wrapper four_img">
+                            <div class="our_services_item_img ">
+                                <img src="../images/service_item_img5.png" alt="">
+                            </div>
+                        </div>
+                           <div class="our_services_item_info_wrapper">
+                               <p class="our_services_item_info_wrapper_title">
+                                Ввод в эксплуатацию
+                               </p>
+                                  <p class="our_services_item_info_wrapper_info">
+                                    Трилоджи осуществляет сопровождение на всех стадиях реализации проекта. Учитываются
+                                    требования и пожелания арендаторов.
+                                    Логистический парк останется передовым после многих лет эксплуатации благодаря соответствию Международной системе Сертификации BREEAM.
+                                    Оптимальная организация транспортной системы на площадке – маршрутные автобусы до ближайших железнодорожных станций, микроавтобус, велосипедные дорожки и др.
+                               </p>
+                           </div>
+                       </div>
+                       <div class="our_services_item special_item">
+                        <div class="our_services_item_img_wrapper five_img">
+                            <div class="our_services_item_img ">
+                                <img src="../images/service_item_img6.png" alt="">
+                            </div>
+                            </div>
+                           <div class="our_services_item_info_wrapper">
+                               <p class="our_services_item_info_wrapper_title">Выбор и приобретение
+                                земельного участка</p>
+                                  <p class="our_services_item_info_wrapper_info">
+                                    Поиск удобного и уникального месторасположения, приобретение земельного участка идеально подходящего для строительства логистического парка.
+                                    Юридическое сопровождение сделки.
+                                    Трилоджи имеет опыт реализация крупных складских и индустриальных проектов на территории Московской области и в крупных региональных центрах России.
+                               </p>
+                           </div>
+                       </div>
+
+                       <div class="our_services_item">
+                        <div class="our_services_item_img_wrapper six_img">
+                        <div class="our_services_item_img ">
+                            <img src="../images/our_services_item_img7.png" alt="">
+                        </div>
+                        </div>
+                           <div class="our_services_item_info_wrapper">
+                               <p class="our_services_item_info_wrapper_title">Строительство</p>
+                               <p class="our_services_item_info_wrapper_info">
+                                Трилоджи придерживается высоких требований, предъявляемых к строительству Логистических парков Класса А и предлагает клиентам ультрасовременные склады с соответствующими характеристиками.
+                                Трилоджи — один из основных игроков, предлагающий «зелёное строительство» на Российском рынке складской недвижимости.
+                            </p>
+                           </div>
+                       </div>
+                   </div>
+                   <p class="special_text">
+                    People Planet Profit
+                 </p>
+               </div>
+           </section>
+           <section class="benefits">
+                <div class="benefits_wrapper">
+                    <h1 class="benefits_title">Преимущества</h1>
+                    <div class="benefits_items_wrapper">
+                        <div class="benefits_item">
+                            <div class="benefits_sign_img">
+                                <img src="../images/sign_img1.png" alt="">
+                            </div>
+                            <div class="hidden_mobile_img">
+                                <img src="../images/mobile_item.png" alt="">
+                            </div>
+                            <div class="benefits_item_img_wrapper">
+                                <img src="../images/benefits_item_img1.png" alt="">
+                            </div>
+                            <p class="benefits_item_title">Универсальность</p>
+                            <p class="benefits_item_info">
+                                Требования и нужды Арендатора (площади
+                                от 5 000 м² до 30 000 м² и более; отдельный
+                                учет электроэнергии; возможность увеличить площадь в будущем; парковочные места для грузовых и легковых автомобилей; дополнительные доки до 1/800 м²; офисы согласно требованиям Арендатора; наличие зоны для контейнеров)
+                            </p>
+                        </div>
+                        <div class="benefits_item special_item_benefits">
+                            <div class="benefits_sign_img2">
+                                <img src="../images/sign_second.png" alt="">
+                            </div>
+                            <div class="hidden_mobile_img">
+                                <img src="../images/mobile_item.png" alt="">
+                            </div>
+                            <div class="benefits_item_img_wrapper">
+                                <img src="../images/benefits_item_img2.png" alt="">
+                            </div>
+                            <p class="benefits_item_title">Устойчивое развитие</p>
+                            <p class="benefits_item_info">
+                                Современный Логистический Парк после нескольких лет эксплуатации (Сертификация BREEM; высокоэффективное освещение и отопление; маршрутные автобусы до ближайших ж/д станций, микроавтобусы с парком, велосипедные дорожки)
+                            </p>
+                        </div>
+                        <div class="benefits_item">
+                            <div class="benefits_sign_item5">
+                                <img src="../images/sign_img5.png" alt="">
+                            </div>
+                            <div class="hidden_mobile_img">
+                                <img src="../images/mobile_item.png" alt="">
+                            </div>
+                            <div class="benefits_item_img_wrapper">
+                                <img src="../images/benefits_item_img3.png" alt="">
+                            </div>
+                            <p class="benefits_item_title">Идентификация
+                                для арендатора</p>
+                            <p class="benefits_item_info">
+                                Идентификация для Арендаторов в Логистическом Парке (размещение названия и логотипа Арендатора на фасаде; цветовой код Арендатора на доках или козырьках)
+                            </p>
+                        </div>
+                    </div>
+                    <p class="special_text_second">
+                        People Planet Profit
+                     </p>
+                </div>
+           </section>
+           <section class="projects">
+               <div class="projects_item_img">
+                   <img src="../images/project_item.png" alt="">
+               </div>
+               <div class="projects_wrapper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                 
+                      <div class="swiper-slide">
+                            <div class="projects_info_img_wrapper">
+                                <div class="projects_info_wrapper">
+                                    <h1 class="projects_title">Проекты</h1>
+                                    <p class="projects_text1">Логистический парк - Томилино</p>
+                                    <p class="projects_text2">
+                                    В 2010 году компания завершила строительство современного логистического комплекса класса А — ТРИЛОДЖИ ПАРК ТОМИЛИНО. Проект является одним из самых успешных проектов в 2010 году на территории России в сфере индустриального строительства. ТРИЛОДЖИ ПАРК ТОМИЛИНО — номинант Премии Сommercial Real Estate Awards.
+                                    </p>
+                                    <div class="projects_info_svg_wrapper">
+                                        <div class="projetcs_svg">
+                                            <img src="../images/placeholder.png" alt="">
+                                        </div>
+                                    <p class="projects_info1">
+                                        Комплекс расположен на федеральной трассе (M5) в 7 км от МКАД (Новорязанское шоссе); доступ на территорию осуществлялся непосредственно с самой трассы.
+                                    </p>
+                                    </div>
+                                    <div class="projects_info_svg_wrapper">
+                                    <div class="projetcs_svg">
+                                        <img src="../images/projects_img2.png" alt="">
+                                    </div>
+                                    <p class="projects_info1">
+                                    Проект реализован при финансовой поддержке Открытие Банк.
+                                    </p>
+                                    
+                                </div>
+                               
+                                </div>
+                                <div class="projects_img_wrapper">
+                                    <img src="../images/swiper_img.png" alt="">
+                                </div>
+                            </div>
+                        
+                        
+                      </div>
+                    
+                   
+                    </div>
+                    <div class="swiper_btns_wrapper">
+                        <div class="swiper_btn1 first_btn1">
+                              <div class="swiper-button-prev"></div>
+                              <p class="swiper_btn_text">Предыдущий</p>
+                        </div>
+                        <div class="swiper_btn1">
+                           
+                            <p class="swiper_btn_text">Следующий</p>
+                            <div class="swiper-button-next"></div>
+                      </div>
+                    </div>
+                  
+                    <!-- If we need navigation buttons -->
+                   
+                  
+                   
+                  </div>
+                  <p class="special_text_second">
+                    People Planet Profit
+                 </p>
+               </div>
+           </section>
+           <section class="contacts">
+                <div class="contacts_wrapper">
+                  
+                    <form action="" class="contacts_form">
+                        <div class="contacts_form_wrapper">
+                            <div class="contacts_phone_svg_phone_wrapper">
+                                <div class="contacts_phone_svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><g><g><image width="17" height="17" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAABIUlEQVQ4T5XSvytFYRzH8dcVf4BkIBMTBqMsQoxiUSbTNZiU0W5goCSLjGI0GSwsNgMLBqVMoq7uLD/65pw6nc6999xnOT1Pn8/7+3k+z6lgG6vo8L++sYutZN/yU0EN3TnlG/pauhNBQN7RmzNEmi78lgEF5A5jBeJRPJSFnGK5QFzFcVnIGg4LxDO4KgsZwCviaunaw0YZQGhS4yXmEtMzRvDVLmQqE/0H47htFxL6cywkxkdMoF4GlO0huonn7kmM11jMgaYxiBs8pQOykDibxUXyo8U+hCu4xw7WM8misw/s5yGhWcJJBhQdvWCowdVqRZA00Vnmas2qqTeChCk6OsiU3QjUFJKa4vk3k76Khn42S5KfHMnmMYlh9KMTR3/rPy/N6k9mLAAAAABJRU5ErkJggg=="/></g></g></svg>
+                                </div>
+                                <p class="contacts_phone_number">+7 (495) 931-99-93</p>
+                            </div>
+                            <p class="contacts_work_hours">Звоните с 10:00 до 19:00</p>
+                            <p class="contacts_info1">
+                                Или заполните форму и мы свяжемся с вами в течении <span>15 минут.</span> 
+                            </p>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" placeholder="Введите фио" class="contacts_input" name="name_surname"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input"  placeholder="Фирма" name="firm"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input" placeholder="Размер площади" name="square_size"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input" name="email" placeholder="@mail" id="email"> 
+                            </div>
+                            <div class="contacts_inputs_wrapper">
+                                <input type="text" class="contacts_input" name="phone_number"  id="phone" placeholder="+7 (___) ___ - __ - __"> 
+                            </div>
+                            <button class="form_submit_btn">Оставить заявку</button>
+                            <p class="contacts_info2">
+                                Нажимая кнопку “Оставить заявку”, вы даете <span>согласие на обработку персональных данных</span>. 
+                            </p>
+                        </div>
+                    </form>
+                    <div id="map" style=" width: 100%;  height: 757px"></div>
+                </div>
+           </section>
+       </main>
+   </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="../js/jquery.inputmask.min.js">
+
+  </script>
+    <script src="../js/script.js">
+    </script>
+</body>
+</html>
+
+
+
+
+
+    
+
+
+
